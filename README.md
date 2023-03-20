@@ -1,9 +1,4 @@
-# template
+# dqcockpit
+The dqcockpit components offers a (readonly) dashboard visualizing the results of executed RQAs and a management overview dashboard that displays the current system state based on automatically extracted analysis data which is translated to the domain level.
 
-This is the standard template for dqualizer projects
-
-## What's the purpose of this repository?
-
-- A standardized starting point for all dqualizer repositories
-- Adds a Github-Workflow that automatically adds all issues and pull requests to the project status kanban board
-- Adds issue templates for dependencies and epics
+A more detailed description of this component's architecture is provided in the [arc42 document](https://github.com/dqualizer/dqualizer/tree/main/docs/asciidoc). 
