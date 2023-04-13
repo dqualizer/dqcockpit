@@ -24,7 +24,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -204,7 +203,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.1.8",
+      "pluginVersion": "9.2.15",
       "targets": [
         {
           "datasource": {
@@ -274,7 +273,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "9.1.8",
+      "pluginVersion": "9.2.15",
       "targets": [
         {
           "datasource": {
@@ -345,7 +344,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "9.1.8",
+      "pluginVersion": "9.2.15",
       "targets": [
         {
           "datasource": {
@@ -418,7 +417,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "9.1.8",
+      "pluginVersion": "9.2.15",
       "targets": [
         {
           "datasource": {
@@ -611,6 +610,65 @@
       "title": "Data sent to Endpoint",
       "transformations": [],
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "id": 15,
+      "options": {
+        "activeTheme": "dqualizer",
+        "disableThemePicker": true,
+        "themes": [
+          {
+            "name": "dqualizer",
+            "styles": [
+              {
+                "props": {
+                  "theme": "light"
+                },
+                "type": "basetheme"
+              },
+              {
+                "props": {
+                  "url": "https://raw.githubusercontent.com/dqualizer/dqcockpit/hackathon/grafana/resources/dqualizer-image.png"
+                },
+                "type": "bgimage"
+              },
+              {
+                "props": {
+                  "url": ""
+                },
+                "type": "url"
+              },
+              {
+                "props": {
+                  "text": ""
+                },
+                "type": "style"
+              },
+              {
+                "props": {
+                  "color": ""
+                },
+                "type": "panel-container-bg-color"
+              }
+            ]
+          }
+        ]
+      },
+      "pluginVersion": "0.2.1",
+      "title": "dqualizer",
+      "transparent": true,
+      "type": "yesoreyeram-boomtheme-panel"
     }
   ],
   "refresh": false,
@@ -622,8 +680,8 @@
       {
         "current": {
           "selected": false,
-          "text": "http_req_duration",
-          "value": "http_req_duration"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "influxdb",
@@ -707,6 +765,6 @@
   "timezone": "",
   "title": "Load_Test_Results_xk6",
   "uid": "zfNOA7c4k",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

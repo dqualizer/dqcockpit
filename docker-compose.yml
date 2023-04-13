@@ -13,6 +13,7 @@ services:
       #- GF_PANELS_DISABLE_SANITIZE_HTML=TRUE # wofür brauch ich das?
       - GF_SECURITY_ADMIN_PASSWORD=demo
       - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
+      - GF_USERS_DEFAULT_THEME=light
     volumes:
       - ./grafana/provisioning:/usr/share/grafana/custom/
     ports:
