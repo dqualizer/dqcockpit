@@ -1,4 +1,5 @@
 # docker compose file for local run :)
+# Usage: docker-compose up --build
 version: "3.9"
 services:
 
