@@ -11,25 +11,15 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}-grafana
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-# Signieren schlägt fehl
-#      - name: Install cosign
-#        if: github.event_name != 'pull_request'
-#        uses: sigstore/cosign-installer@v3.0.1
-#        with:
-#          cosign-release: "v1.13.1"
 
       - name: Log in to the Container registry
         uses: docker/login-action@v2
@@ -56,10 +46,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-# Signieren schlägt fehl
-#      - name: Sign the published Docker image
-#        if: ${{ github.event_name != 'pull_request' }}
-#        env:
-#          COSIGN_EXPERIMENTAL: "true"
-#        run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
+          
