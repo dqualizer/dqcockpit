@@ -657,7 +657,7 @@
               },
               {
                 "props": {
-                  "color": ""
+                  "color": "#fffb"
                 },
                 "type": "panel-container-bg-color"
               }
