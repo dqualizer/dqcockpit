@@ -639,7 +639,7 @@
               },
               {
                 "props": {
-                  "url": "https://raw.githubusercontent.com/dqualizer/dqcockpit/hackathon/grafana/resources/dqualizer-image.png"
+                  "url": "https://raw.githubusercontent.com/dqualizer/dqcockpit/main/grafana/resources/dqualizer-image.png"
                 },
                 "type": "bgimage"
               },
@@ -657,7 +657,7 @@
               },
               {
                 "props": {
-                  "color": ""
+                  "color": "#fffb"
                 },
                 "type": "panel-container-bg-color"
               }

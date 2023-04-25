@@ -10,7 +10,6 @@ services:
     image: grafana/grafana:9.2.15-ubuntu
     container_name: "grafana"
     environment:
-      #- GF_PANELS_DISABLE_SANITIZE_HTML=TRUE # wofür brauch ich das?
       - GF_SECURITY_ADMIN_PASSWORD=demo
       - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
       - GF_USERS_DEFAULT_THEME=light
@@ -24,7 +23,6 @@ services:
 # Local build with custom image
 ###
   grafana-custom:
-    #image: grafana/grafana:9.2.15-ubuntu
     build:
       context: grafana
       dockerfile: Dockerfile
