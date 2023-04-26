@@ -6,8 +6,9 @@ datasources:
     access: proxy
     url: http://influxdb:8086
     jsonData:
-      dbName: '$DOCKER_INFLUXDB_INIT_BUCKET'
+      # This database should be mapped to a bucket
+      dbName: my-bucket
       httpMode: POST
       httpHeaderName1: 'Authorization'
     secureJsonData:
-      httpHeaderValue1: 'Token $DOCKER_INFLUXDB_INIT_ADMIN_TOKEN'
+      httpHeaderValue1: 'Token specialToken000'

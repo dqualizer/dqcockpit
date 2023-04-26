@@ -13,6 +13,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=demo
       - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
       - GF_USERS_DEFAULT_THEME=light
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-db
     volumes:
       - ./grafana/provisioning:/usr/share/grafana/custom/
     ports:
