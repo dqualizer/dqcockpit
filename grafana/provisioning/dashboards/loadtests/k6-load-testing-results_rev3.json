@@ -58,6 +58,65 @@
       "height": "250px",
       "panels": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "description": "",
+          "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 23
+          },
+          "id": 150,
+          "options": {
+            "activeTheme": "dqualizer",
+            "disableThemePicker": true,
+            "themes": [
+              {
+                "name": "dqualizer",
+                "styles": [
+                  {
+                    "props": {
+                      "theme": "light"
+                    },
+                    "type": "basetheme"
+                  },
+                  {
+                    "props": {
+                      "url": "https://raw.githubusercontent.com/dqualizer/dqcockpit/main/grafana/resources/dqualizer-image.png"
+                    },
+                    "type": "bgimage"
+                  },
+                  {
+                    "props": {
+                      "url": ""
+                    },
+                    "type": "url"
+                  },
+                  {
+                    "props": {
+                      "text": ""
+                    },
+                    "type": "style"
+                  },
+                  {
+                    "props": {
+                      "color": "#fffb"
+                    },
+                    "type": "panel-container-bg-color"
+                  }
+                ]
+              }
+            ]
+          },
+          "pluginVersion": "0.2.1",
+          "title": "dqualizer",
+          "transparent": true,
+          "type": "yesoreyeram-boomtheme-panel"
+        },
+        {
           "aliasColors": {},
           "bars": true,
           "dashLength": 10,
