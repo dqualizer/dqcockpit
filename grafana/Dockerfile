@@ -1,4 +1,4 @@
-FROM grafana/grafana:9.2.15-ubuntu
+FROM grafana/grafana
 
 USER root
 WORKDIR /tmp

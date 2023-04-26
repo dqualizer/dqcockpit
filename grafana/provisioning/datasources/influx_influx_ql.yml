@@ -7,8 +7,8 @@ datasources:
     url: http://influxdb:8086
     jsonData:
       # This database should be mapped to a bucket
-      dbName: my-bucket
+      dbName: $DOCKER_INFLUXDB_INIT_BUCKET
       httpMode: POST
       httpHeaderName1: 'Authorization'
     secureJsonData:
-      httpHeaderValue1: 'Token specialToken000'
+      httpHeaderValue1: 'Token $DOCKER_INFLUXDB_INIT_ADMIN_TOKEN'

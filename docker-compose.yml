@@ -7,7 +7,7 @@ services:
 # Local standard build with official image and volume mounted provisioning
 ###
   grafana:
-    image: grafana/grafana:9.2.15-ubuntu
+    image: grafana/grafana
     container_name: "grafana"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=demo
