@@ -663,9 +663,9 @@
               },
               {
                 "props": {
-                  "color": "#fffb"
+                  "text": ".css-10ey0fn-panel-container {\nbackground-color: #fffa\n}"
                 },
-                "type": "css-10ey0fn-panel-container"
+                "type": "style"
               }
             ]
           }
