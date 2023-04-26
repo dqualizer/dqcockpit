@@ -1579,6 +1579,23 @@
         ],
         "query": "http_req_duration,http_req_blocked,http_req_connecting,http_req_looking_up,http_req_receiving,http_req_sending,http_req_waiting",
         "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "InfluxDB_v2_InfluxQL",
+          "value": "InfluxDB_v2_InfluxQL"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "DS_K6",
+        "options": [],
+        "query": "influxdb",
+        "refresh": 1,
+        "regex": "InfluxDB_v2_InfluxQL",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
