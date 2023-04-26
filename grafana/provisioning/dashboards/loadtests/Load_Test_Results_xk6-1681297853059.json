@@ -660,6 +660,12 @@
                   "color": "#fffb"
                 },
                 "type": "panel-container-bg-color"
+              },
+              {
+                "props": {
+                  "color": "#fffb"
+                },
+                "type": "css-10ey0fn-panel-container"
               }
             ]
           }
