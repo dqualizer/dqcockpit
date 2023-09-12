@@ -1,13 +1,13 @@
-# This configuration file defines two instances 
+# This configuration file defines two instances
 # of the same datasource, "InfluxDB_v2".
 
-# The first datasource, "InfluxDB_v2_Flux," 
+# The first datasource, "InfluxDB_v2_Flux,"
 # uses the Flux query language and sets the default bucket for queries.
 
-# The second datasource, "InfluxDB_v2_InfluxQL," connects 
+# The second datasource, "InfluxDB_v2_InfluxQL," connects
 # to the same InfluxDB server but uses the old InfluxQL query language.
 
-# By providing both options, this configuration offers 
+# By providing both options, this configuration offers
 # compatibility and flexibility in querying InfluxDB.
 
 apiVersion: 1
@@ -30,9 +30,8 @@ datasources:
     access: proxy
     url: http://influxdb:8086
     jsonData:
-      # This database should be mapped to a bucket
       dbName: $DOCKER_INFLUXDB_INIT_BUCKET
       httpMode: "POST"
-      httpHeaderName1: 'Authorization'
+      httpHeaderName1: "Authorization"
     secureJsonData:
-      httpHeaderValue1: 'Token $DOCKER_INFLUXDB_INIT_ADMIN_TOKEN'    
+      httpHeaderValue1: "Token $DOCKER_INFLUXDB_INIT_ADMIN_TOKEN"

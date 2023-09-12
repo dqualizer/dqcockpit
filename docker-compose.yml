@@ -2,10 +2,9 @@
 # Usage: docker-compose up --build
 version: "3.9"
 services:
-
-###
-# Local build with custom image
-###
+  ###
+  # Local build with custom image
+  ###
   grafana-custom:
     build:
       context: grafana
@@ -13,3 +12,5 @@ services:
     container_name: "grafana-custom"
     ports:
       - "3030:3000"
+    environment:
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-bucket
