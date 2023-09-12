@@ -4,22 +4,6 @@ version: "3.9"
 services:
 
 ###
-# Local standard build with official image and volume mounted provisioning
-###
-  grafana:
-    image: grafana/grafana:9.2.15-ubuntu
-    container_name: "grafana"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=demo
-      - GF_PATHS_PROVISIONING=/usr/share/grafana/custom/
-      - GF_USERS_DEFAULT_THEME=light
-    volumes:
-      - ./grafana/provisioning:/usr/share/grafana/custom/
-    ports:
-      - "3000:3000"
-
-
-###
 # Local build with custom image
 ###
   grafana-custom:

@@ -1,5 +1,6 @@
 FROM --platform=$BUILDPLATFORM grafana/grafana:9.2.15-ubuntu
 
+
 USER root
 WORKDIR /tmp
 
