@@ -11,7 +11,7 @@ providers:
       path: /usr/share/grafana/custom/dashboards/loadtests
 
   - name: 'ChaosToolkit'
-    orgId: 2
+    orgId: 1
     folder: 'ChaosToolkit'
     type: file
     disableDeletion: false
