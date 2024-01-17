@@ -98,6 +98,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          images: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
           tags: |
             type=ref,event=branch
             type=ref,event=tag
