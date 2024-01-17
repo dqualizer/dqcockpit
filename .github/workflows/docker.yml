@@ -36,6 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          tags: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
           images: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
 
       - name: Set up QEMU
@@ -56,6 +57,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: grafana/.
+          tags: ${{ steps.meta.outputs.tags }}
           platforms: ${{ matrix.platform }}
           outputs: type=image,name=${{ steps.meta.outputs.images }},push-by-digest=true,name-canonical=true,push=true
 
