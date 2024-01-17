@@ -11,7 +11,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  REGISTRY_IMAGE: dqualizer/leasing-ninja
+  REGISTRY_IMAGE: dqualizer/${{ github.repository }}
 
 jobs:
   build:
@@ -37,7 +37,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
-          tags: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
