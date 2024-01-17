@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          tags: ${{ env.REGISTRY_IMAGE }}
+          tags: ${{ env.REGISTRY }}/${{ env.REGISTRY_IMAGE }}
           images: ${{ env.REGISTRY_IMAGE }}
 
       - name: Set up QEMU
