@@ -41,7 +41,7 @@
               }
             ]
           },
-          "unit": "ms"
+          "unit": "s"
         },
         "overrides": []
       },
@@ -51,7 +51,7 @@
         "x": 0,
         "y": 0
       },
-      "id": 2,
+      "id": 5,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -61,7 +61,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/.*/",
+          "fields": "/^actual_recovery_time$/",
           "values": false
         },
         "textMode": "value"
@@ -73,11 +73,11 @@
             "type": "influxdb",
             "uid": "P5697886F9CA74929"
           },
-          "query": "from(bucket: \"my-bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"process_running\" and r[\"_field\"] == \"is_running\")\r\n  |> elapsed(unit: 1ms)\r\n  |> filter(fn: (r) => r._value == false)\r\n  |> sum(column: \"elapsed\")\r\n\r\n\r\n\r\n",
+          "query": "from(bucket: \"my-bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"actual_response_measure\" and r[\"_field\"] == \"actual_recovery_time\")\r\n\r\n\r\n",
           "refId": "A"
         }
       ],
-      "title": "Recovery time",
+      "title": "Recovery Time",
       "type": "stat"
     },
     {
@@ -114,7 +114,7 @@
         "x": 8,
         "y": 0
       },
-      "id": 4,
+      "id": 8,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -134,7 +134,7 @@
             "type": "influxdb",
             "uid": "P5697886F9CA74929"
           },
-          "query": "from(bucket: \"my-bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"process_running\" and r[\"_field\"] == \"is_running\")\r\n  |> elapsed(unit: 1ms)\r\n  |> filter(fn: (r) => r._value == false)\r\n  |> sum(column: \"elapsed\")\r\n\r\n\r\n\r\n",
+          "query": "from(bucket: \"my-bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"actual_response_measure\" and r[\"_field\"] == \"actual_recovery_time\")\r\n\r\n\r\n\r\n",
           "refId": "A"
         },
         {
@@ -152,13 +152,13 @@
             "type": "__expr__",
             "uid": "__expr__"
           },
-          "expression": "$A-$B",
+          "expression": "($A*1000)-$B",
           "hide": false,
           "refId": "C",
           "type": "math"
         }
       ],
-      "title": "Recovery time minus expected recovery time",
+      "title": "Recovery Time Delta",
       "transformations": [],
       "type": "stat"
     },
@@ -229,6 +229,65 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 6
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "10.0.5",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P5697886F9CA74929"
+          },
+          "query": "from(bucket: \"my-bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r[\"_measurement\"] == \"process_running\" and r[\"_field\"] == \"is_running\")\r\n  |> elapsed(unit: 1ms)\r\n  |> filter(fn: (r) => r._value == false)\r\n  |> sum(column: \"elapsed\")\r\n\r\n\r\n\r\n",
+          "refId": "A"
+        }
+      ],
+      "title": "Downtime",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P5697886F9CA74929"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "palette-classic"
           },
           "custom": {
@@ -279,9 +338,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
+        "h": 6,
+        "w": 16,
+        "x": 8,
         "y": 6
       },
       "id": 1,
@@ -320,8 +379,8 @@
     "list": []
   },
   "time": {
-    "from": "2024-02-21T16:33:46.531Z",
-    "to": "2024-02-21T16:38:48.789Z"
+    "from": "2024-03-08T09:16:15.408Z",
+    "to": "2024-03-08T09:17:10.876Z"
   },
   "timepicker": {},
   "timezone": "",
