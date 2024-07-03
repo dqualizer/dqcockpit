@@ -33,6 +33,9 @@ jobs:
           platform=${{ matrix.platform }}
           echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
@@ -56,7 +59,7 @@ jobs:
         id: build
         uses: docker/build-push-action@v6
         with:
-          context: ../../grafana/.
+          context: grafana/.
           platforms: ${{ matrix.platform }}
           build-args: |
             GITHUB_USER=${{ github.repository_owner }}
