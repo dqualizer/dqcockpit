@@ -56,6 +56,7 @@ jobs:
         id: build
         uses: docker/build-push-action@v6
         with:
+          context: ./grafana
           platforms: ${{ matrix.platform }}
           build-args: |
             GITHUB_USER=${{ github.repository_owner }}
