@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM grafana/grafana-oss:10.0.5-ubuntu
+FROM grafana/grafana-oss:10.0.10-ubuntu
 
 
 USER root
