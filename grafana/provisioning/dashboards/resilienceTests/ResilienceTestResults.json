@@ -47,6 +47,16 @@
           "mappings": [
             {
               "options": {
+                "-1": {
+                  "color": "red",
+                  "index": 3,
+                  "text": "No automatic restart"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
                 "from": 0,
                 "result": {
                   "color": "green",
@@ -155,13 +165,13 @@
             },
             {
               "options": {
-                "from": 0,
+                "from": -10000000000000000000,
                 "result": {
                   "color": "green",
                   "index": 1,
                   "text": "Validated"
                 },
-                "to": -10000000000000000000
+                "to": 0
               },
               "type": "range"
             }
